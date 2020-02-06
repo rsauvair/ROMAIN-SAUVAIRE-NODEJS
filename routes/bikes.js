@@ -1,14 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const handlersSocks = require('../handlers/bikes');
+const handlersBikes = require('../handlers/bikes');
 
 router.route('/')
-    .post(handlersSocks.createBike)
-    .get(handlersSocks.getAllBikes);
+    .post(handlersBikes.createBike)
+    .get(handlersBikes.getAllBikes);
 
 router.route('/:id')
-    .get(handlersSocks.getOneBike)
-    .put(handlersSocks.updateOneSock)
-    .delete(handlersSocks.deleteOneSock);
+    .get(handlersBikes.getOneBike)
+    .put(handlersBikes.updateOneBike)
+    .delete(handlersBikes.deleteOneBike);
 
 module.exports = router;

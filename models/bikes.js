@@ -46,7 +46,7 @@ const bikeSchema = new mongoose.Schema({
 });
 
 // Model
-const Bikes = mongoose.model('Sock', bikeSchema);
+const Bikes = mongoose.model('Bike', bikeSchema);
 
 // Export
 module.exports = Bikes;
