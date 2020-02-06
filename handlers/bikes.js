@@ -20,11 +20,12 @@ exports.getAllBikes = async (req, res) => {
     try {
         let bikes;
         if (req.query.brand) {
-            console.log('ok');
             bikes = await db.Bike
                 .find({brand: req.query.brand})
                 .sort({releaseDate: 1})
                 .select({name: 1, brand: 1, releaseDate: 1});
+        } else if (req.query.isElectric) {
+            bikes = await db.Bike.find({isElectric: true});
         } else {
             bikes = await db.Bike.find();
         }
