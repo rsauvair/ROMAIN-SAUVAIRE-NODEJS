@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // Connecting to the db
-mongoose.connect('mongodb://localhost/socksdb', {
+mongoose.connect('mongodb://localhost/bikesdb', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
