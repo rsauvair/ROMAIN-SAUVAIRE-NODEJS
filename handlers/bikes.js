@@ -30,13 +30,13 @@ exports.getAllBikes = async (req, res) => {
     }
 };
 
-exports.getOneSock = async (req, res) => {
+exports.getOneBike = async (req, res) => {
     try {
-        let thisSock = await db.Sock.findById(req.params.id);
-        return res.status(200).json(thisSock);
+        let thisBike = await db.Bike.findById(req.params.id);
+        return res.status(200).json(thisBike);
     } catch (err) {
         return res.status(400).json({
-            message: 'Oops could not find this specific sock',
+            message: 'Oops could not find this specific bike',
             err,
         })
     }

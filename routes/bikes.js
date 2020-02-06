@@ -7,7 +7,7 @@ router.route('/')
     .get(handlersSocks.getAllBikes);
 
 router.route('/:id')
-    .get(handlersSocks.getOneSock)
+    .get(handlersSocks.getOneBike)
     .put(handlersSocks.updateOneSock)
     .delete(handlersSocks.deleteOneSock);
 
