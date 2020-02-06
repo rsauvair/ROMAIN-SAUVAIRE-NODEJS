@@ -18,7 +18,17 @@ exports.createBike = async (req, res) => {
 
 exports.getAllBikes = async (req, res) => {
     try {
-        let bikes = await db.Bike.find();
+        let bikes;
+        if (req.query.brand) {
+            console.log('ok');
+            bikes = await db.Bike
+                .find({brand: req.query.brand})
+                .sort({releaseDate: 1})
+                .select({name: 1, brand: 1, releaseDate: 1});
+        } else {
+            bikes = await db.Bike.find();
+        }
+
         return res.status(200).json({
             bikes: bikes
         });
