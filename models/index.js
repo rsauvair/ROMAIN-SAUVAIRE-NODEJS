@@ -5,8 +5,8 @@ mongoose.connect('mongodb://localhost/socksdb', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
-    .then(() => console.log('Connected to the sal database'))
-    .catch(err => console.error(`Error connecting to the sal db: ${err}`));
+    .then(() => console.log('Connected to the database'))
+    .catch(err => console.error(`Error connecting to the db: ${err}`));
 
 // Exporting all models
-module.exports.Sock = require('./sock');
+module.exports.Bike = require('./bikes');

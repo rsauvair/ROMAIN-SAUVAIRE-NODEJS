@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const handlersSocks = require('../handlers/socks');
+const handlersSocks = require('../handlers/bikes');
 
 router.route('/')
-    .post(handlersSocks.createSock)
-    .get(handlersSocks.getAllSocks);
+    .post(handlersSocks.createBike)
+    .get(handlersSocks.getAllBikes);
 
 router.route('/:id')
     .get(handlersSocks.getOneSock)

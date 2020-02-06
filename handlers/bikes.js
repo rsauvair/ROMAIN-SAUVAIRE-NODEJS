@@ -1,32 +1,30 @@
 const db = require('../models');
 
-exports.createSock = async (req, res) => {
+exports.createBike = async (req, res) => {
     try {
-        let newSock = await db.Sock.create(req.body);
-        console.log(newSock);
+        let newBike = await db.Bike.create(req.body);
+        console.log(newBike);
         return res.status(200).json({
-            message: 'Nouvelle paire de chaussette créée avec succès !',
-            newSock
+            message: 'Nouveau vélo créé avec succès!',
+            newBike: newBike
         });
     } catch (err) {
         return res.status(400).json({
-            message: 'Oups! Impossible de créer ta chaussette!',
+            message: 'Oups! Impossible de créer ce vélo!',
             error: err,
         });
     }
 };
 
-exports.getAllSocks = async (req, res) => {
+exports.getAllBikes = async (req, res) => {
     try {
-        let socks = req.query
-            ? await db.Sock.find(req.query)
-            : await db.Sock.find();
+        let bikes = await db.Bike.find();
         return res.status(200).json({
-            socks
+            bikes: bikes
         });
     } catch (err) {
         return res.status(400).json({
-            message: 'Oups! Impossible de récupérer les chaussettes!',
+            message: 'Oups! Impossible de récupérer les vélos!',
             error: err,
         });
     }
